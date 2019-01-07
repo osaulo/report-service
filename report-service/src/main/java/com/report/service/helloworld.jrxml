@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="helloworld" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="590ff44f-ce63-472b-bdec-b862a7ea7dbb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="Dataset1" uuid="787029c4-0136-4549-8871-629278225a58">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="state" class="java.lang.String"/>
+		<field name="cityName" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="top" class="java.lang.String"/>
+	<parameter name="left" class="java.lang.String"/>
+	<parameter name="right" class="java.lang.String"/>
+	<parameter name="bottom" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="cities" class="java.util.ArrayList"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="386" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="2" y="0" width="550" height="115" uuid="cddf99e4-46a7-4c11-8cda-7197c6852b9d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HELLO WORLD]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="134" width="141" height="30" uuid="2eb94dce-b76c-4beb-9e32-ef58d7ecdb64"/>
+				<textFieldExpression><![CDATA[$P{top}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="134" width="138" height="30" uuid="11bcbb06-a322-42a9-b59f-68fb815e881b"/>
+				<textFieldExpression><![CDATA[$P{left}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="134" width="138" height="30" uuid="2bf5a0c2-dfb9-4b12-96e5-886a1f094ddb"/>
+				<textFieldExpression><![CDATA[$P{right}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="134" width="138" height="30" uuid="8dbde15a-d5ad-4919-9a40-a20067935c8e"/>
+				<textFieldExpression><![CDATA[$P{bottom}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="0" y="180" width="555" height="30" uuid="d303058d-9842-4a6f-819f-884bdcdac7df"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="5ec5a387-c91f-4cf9-b4c7-0a4f29165225">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{cities},false)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="555">
+						<textField>
+							<reportElement x="100" y="0" width="100" height="30" uuid="1ed9e383-7245-417c-866e-455bf9156642"/>
+							<textFieldExpression><![CDATA[$F{state}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="0" y="0" width="100" height="30" uuid="8826905f-da80-4065-802b-5d74f5bcf2e7"/>
+							<textFieldExpression><![CDATA[$F{cityName}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
